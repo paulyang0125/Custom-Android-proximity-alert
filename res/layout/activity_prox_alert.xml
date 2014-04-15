@@ -51,7 +51,60 @@
         android:layout_height="wrap_content"
         android:text="Save Point Manually" />
 
+    <TextView
+        android:id="@+id/radiusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Radius:" />
 
+    <EditText
+        android:id="@+id/radiusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="5dip"
+        android:text="10" >
+    </EditText>
 
+    <RadioGroup
+        android:id="@+id/proximityTypeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/androidProximityAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="android type" />
+
+        <RadioButton
+            android:id="@+id/customProximityAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="custom" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/clearProximityAlert"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="clearProximityAlert" />
+
+        <Button
+            android:id="@+id/showDistance"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:enabled="True"
+            android:text="Show distance" />
+    </LinearLayout>
 
 </LinearLayout>

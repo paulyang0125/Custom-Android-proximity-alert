@@ -8,9 +8,9 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -28,6 +28,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.example.proxalert.ProximityAlertService"
+            android:enabled="true" >
+            <intent-filter android:label="Gps logger" >
+                <action android:name="com.example.proximityalert.ProximityAlertService" >
+                </action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

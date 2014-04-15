@@ -20,23 +20,7 @@ public class ProximityIntentReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-
-		String key = LocationManager.KEY_PROXIMITY_ENTERING;
-
-		Boolean entering = intent.getBooleanExtra(key, false);
-
-		if (entering) {
-
-			Log.d(getClass().getSimpleName(), "entering");
-			Toast.makeText(context,"entering", Toast.LENGTH_LONG).show();
-
-		} else {
-
-			Log.d(getClass().getSimpleName(), "exiting");
-			Toast.makeText(context,"exiting", Toast.LENGTH_LONG).show();
-
-		}
-
+		
 		NotificationManager notificationManager = (NotificationManager) context
 				.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -46,12 +30,34 @@ public class ProximityIntentReceiver extends BroadcastReceiver {
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
 				intent, 0);
 		
-
 		Notification notification = createNotification();
-		notification.setLatestEventInfo(context, "Proximity Alert!",
-				"You are near your point of interest.", pendingIntent);
-		
-		notificationManager.notify(NOTIFICATION_ID, notification);
+
+		String key = LocationManager.KEY_PROXIMITY_ENTERING;
+
+		Boolean entering = intent.getBooleanExtra(key, false);
+
+		if (entering) {
+
+			Log.d(getClass().getSimpleName(), "entering");
+			Toast.makeText(context,"entering", Toast.LENGTH_LONG).show();
+			
+			notification.setLatestEventInfo(context, "Proximity Alert!",
+					"You are entering your point of interest.", pendingIntent);
+			
+			notificationManager.notify(NOTIFICATION_ID, notification);
+
+		} else {
+
+			Log.d(getClass().getSimpleName(), "exiting");
+			Toast.makeText(context,"exiting", Toast.LENGTH_LONG).show();
+			notification.setLatestEventInfo(context, "Proximity Alert!",
+					"You are exiting your point of interest.", pendingIntent);
+			notificationManager.notify(NOTIFICATION_ID, notification);
+
+		}
+
+
+
 
 	}
 	

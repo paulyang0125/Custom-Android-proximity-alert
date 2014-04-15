@@ -24,14 +24,21 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
+        public static final int action_settings=0x7f08000e;
+        public static final int androidProximityAlert=0x7f08000a;
+        public static final int clearProximityAlert=0x7f08000c;
+        public static final int customProximityAlert=0x7f08000b;
         public static final int find_coordinates_button=0x7f080002;
         public static final int point_latitude=0x7f080000;
         public static final int point_latitude_1=0x7f080004;
         public static final int point_longitude=0x7f080001;
         public static final int point_longitude_1=0x7f080005;
+        public static final int proximityTypeRadioGroup=0x7f080009;
+        public static final int radiusLabel=0x7f080007;
+        public static final int radiusValue=0x7f080008;
         public static final int save_point_button=0x7f080003;
         public static final int save_point_button_manual=0x7f080006;
+        public static final int showDistance=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_prox_alert=0x7f030000;
